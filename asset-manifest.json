@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/bigShop/static/css/main.c973e3ac.css",
+    "main.js": "/bigShop/static/js/main.f7ca902b.js",
+    "static/media/carousel-1.jpg": "/bigShop/static/media/carousel-1.60602d436fd1c214c746.jpg",
+    "static/media/carousel-3.jpg": "/bigShop/static/media/carousel-3.bccfb696d299dbe84841.jpg",
+    "static/media/offer-1.jpg": "/bigShop/static/media/offer-1.6bd98b846d36554bf44b.jpg",
+    "static/media/carousel-2.jpg": "/bigShop/static/media/carousel-2.c8ffc953002ee1e0816b.jpg",
+    "static/media/offer-2.jpg": "/bigShop/static/media/offer-2.cbe6dfd75d3e42d31265.jpg",
+    "static/media/icomoon.svg?7hijuy": "/bigShop/static/media/icomoon.cbb91a3d63b4a7947aff.svg",
+    "static/media/icomoon.eot?7hijuy": "/bigShop/static/media/icomoon.c9c385b11ff634a81e9b.eot",
+    "static/media/icomoon.woff?7hijuy": "/bigShop/static/media/icomoon.c40f46cd1f80e26789f3.woff",
+    "static/media/icomoon.ttf?7hijuy": "/bigShop/static/media/icomoon.775259956450b45b7a2a.ttf",
+    "static/media/slick.svg": "/bigShop/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/bigShop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/bigShop/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/bigShop/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/bigShop/index.html",
+    "main.c973e3ac.css.map": "/bigShop/static/css/main.c973e3ac.css.map",
+    "main.f7ca902b.js.map": "/bigShop/static/js/main.f7ca902b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c973e3ac.css",
+    "static/js/main.f7ca902b.js"
+  ]
+}
