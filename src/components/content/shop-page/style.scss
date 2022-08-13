@@ -243,6 +243,7 @@
             .L-featured-item-wrapper {
               .L-featured-overlay {
                 display: block;
+
               }
 
               .L-featured-image {
@@ -271,6 +272,9 @@
                 justify-content: center;
                 align-items: center;
                 height: 100%;
+                @include screen-max-width-576{
+                  flex-wrap: wrap;
+                }
                 span {
                   display: block;
                   padding: 10px;
