@@ -1,0 +1,51 @@
+@import "src/assets/style/variables";
+@import "src/assets/style/mixin";
+.L-pagination{
+  width: 100%;
+  margin: 15px 0;
+  align-items: center;
+  @include screen-max-width-767{
+    justify-content: center;
+  }
+  button{
+    padding: 5px 15px;
+    margin: 0 15px;
+    color: $grey-base;
+    font-weight: bold;
+    span{
+      &:hover{
+        color: $white;
+        transition: 0.3s;
+      }
+    }
+  }
+  .L-pagination-page{
+    margin: 0 10px;
+    @include screen-max-width-767{
+      margin: 0 7px;
+    }
+    span{
+      padding: 10px;
+      @include screen-max-width-767{
+        padding: 6px;
+      }
+      cursor: pointer;
+      color: $grey-base;
+      font-weight: bold;
+      &:hover{
+        color: $white;
+        transition: 0.3s;
+      }
+    }
+    .L-active-page{
+      padding: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: $yellow;
+      background-color: $grey-base;
+      @include screen-max-width-767{
+        padding: 6px;
+      }
+    }
+  }
+}

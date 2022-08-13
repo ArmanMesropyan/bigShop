@@ -1,0 +1,35 @@
+@import "src/assets/style/variables";
+@import "src/assets/style/mixin";
+
+.L-product-tab-information {
+  width: 100%;
+  .L-product-tab-information-title {
+    color: $grey-base;
+    margin: 12px 0;
+    font-size: $font-size-28;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: $font-size-18;
+    color: $grey-05;
+    line-height: 30px;
+  }
+
+  .L-product-tab-information-list {
+    margin-top: 25px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li {
+      @include screen-max-width-767{
+        width: 100%;
+      }
+      color: $grey-05;
+      width: 45%;
+      border-bottom: 1px solid $grey-05;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+  }
+}

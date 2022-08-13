@@ -1,0 +1,33 @@
+@import "src/assets/style/variables";
+.L-fixed-cart-icon{
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  background-color: $yellow;
+  border-radius: 50%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $grey-base;
+  span{
+    color: $white;
+    position: relative;
+  }
+  .L-cart-count{
+    position: absolute;
+    top: 10%;
+    right: -26%;
+    color: $white;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: red;
+
+  }
+  .L-cart-not-count{
+    display: none;
+  }
+}

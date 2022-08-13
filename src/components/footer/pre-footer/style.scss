@@ -1,0 +1,27 @@
+@import 'src/assets/style/variables';
+@import 'src/assets/style/mixin';
+hr{
+  opacity: 0.2;
+}
+.L-pre-footer{
+  padding: 20px 0;
+  .L-pre-footer-child{
+    margin: 10px 0;
+    .L-pre-footer-title{
+      font-weight: 700;
+      color: $white;
+      span{
+       color: $yellow;
+      }
+    }
+    .L-pre-footer-pay{
+      width: 300px;
+      height: 26px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include screen-max-width-576{
+        width: 200px;
+      }
+    }
+  }
+}

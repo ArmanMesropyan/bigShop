@@ -1,0 +1,137 @@
+@import 'src/assets/style/variables';
+@import 'src/assets/style/mixin';
+
+.L-Contact {
+  margin-top: 25px;
+  margin-bottom: 150px;
+
+  .L-contact-header {
+    background-color: white;
+    width: 100%;
+
+    a {
+      margin: 0 10px;
+      padding: 15px 0;
+    }
+
+    .L-nav-link {
+      color: $grey-base;
+    }
+
+    .L-nav-active-link {
+      color: $yellow;
+    }
+  }
+
+  .L-contact-title {
+    width: 100%;
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+
+    h6 {
+      text-transform: uppercase;
+      color: $grey-base;
+      font-size: $font-size-32;
+    }
+
+    .L-contact-title-line {
+      @include screen-max-width-576 {
+        display: none;
+      }
+      width: 75%;
+      border-bottom: 1px dashed;
+    }
+  }
+
+  .L-contact-wrapper {
+    width: 100%;
+    margin-top: 50px;
+    @include screen-max-width-991 {
+      flex-wrap: wrap;
+    }
+
+    .L-contact-child {
+      &:first-child {
+        width: 60%;
+        background-color: $white;
+        margin-right: 20px;
+        @include screen-max-width-991 {
+          width: 100%;
+          margin-right: 0px;
+        }
+      }
+
+      &:last-child {
+        margin-left: 20px;
+        width: 40%;
+        @include screen-max-width-991 {
+          width: 100%;
+          margin-top: 25px;
+          margin-left: 0px;
+        }
+      }
+
+      .L-contact-child-tools {
+        input, textarea {
+          margin: 15px;
+          padding: 10px;
+          width: 95%;
+          border: 1px solid #c0c0c0;
+          @include screen-max-width-576 {
+            width: 85%;
+          }
+        }
+
+        button {
+          margin: 5px 15px;
+          width: 150px;
+          height: 40px;
+          color: $grey-base;
+        }
+      }
+
+      .L-contact-pre-child {
+        &:first-child {
+          margin-bottom: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 70%;
+          @include screen-max-width-991 {
+            height: 70%;
+          }
+
+          iframe {
+            width: 85%;
+            height: 85%;;
+          }
+        }
+
+        &:last-child {
+          @include screen-max-width-991 {
+            height: 50%;
+          }
+          height: 25%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        p {
+          margin: 7px 0;
+          color: $grey-base;
+
+          span {
+            color: $yellow;
+            margin: 0 15px;
+          }
+        }
+
+        width: 100%;
+
+        background-color: $white;
+      }
+    }
+  }
+}

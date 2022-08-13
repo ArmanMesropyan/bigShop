@@ -1,0 +1,30 @@
+@import "src/assets/style/variables";
+@import "src/assets/style/mixin";
+.L-colleague-wrapper{
+  width: 100%;
+  margin: 50px 0;
+.L-colleague{
+  width:100%;
+  @include  screen-max-width-576{
+    .slick-slide {
+      margin: 0 10px;
+    }
+  }
+  .L-colleague-child{
+    @include  screen-max-width-576{
+      width: 140px;
+    }
+    padding: 10px;
+    width: 180px;
+    height: 160px;
+    background-color: white;
+    .L-colleague-image{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+  }
+}}

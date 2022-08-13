@@ -1,0 +1,14 @@
+@import "src/assets/style/variables";
+.L-tab-product-description{
+  .L-tab-product-description-title{
+    color: $grey-base;
+    margin: 12px 0;
+    font-size: $font-size-28;
+  }
+  p{
+    margin-top: 20px;
+    font-size: $font-size-18;
+    color: $grey-05;
+    line-height: 30px;
+  }
+}

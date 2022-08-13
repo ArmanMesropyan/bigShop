@@ -1,0 +1,68 @@
+@import "src/assets/style/variables";
+@import "src/assets/style/mixin";
+.L-aside-content{
+  justify-content: space-between;
+.L-aside-content-child {
+  width: 49%;
+  margin: 20px 0;
+  height: 300px;
+  position: relative;
+@include  screen-max-width-576{
+  width: 100%;
+}
+
+  .L-aside-content-img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include screen-max-width-991 {
+      background-position: center;
+    }
+  }
+
+  &:hover {
+    overflow: hidden;
+
+    .L-aside-content-img {
+      transform: rotate(15deg) scale(1.5, 1.5);
+      transition: 0.4s;
+    }
+  }
+
+  .L-aside-child-overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(83, 83, 83, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: $white;
+      font-size: $font-size-18;
+      margin: 7px 0;
+    }
+
+    h6 {
+      font-size: $font-size-28;
+      margin: 7px 0;
+      color: $white;
+      @include screen-max-width-991{
+        font-size: $font-size-18;
+      }
+    }
+
+    button {
+      margin-top: 10px;
+      color: $grey-base;
+      width: 100px;
+      height: 35px;
+    }
+  }
+}
+}

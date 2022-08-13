@@ -1,0 +1,97 @@
+@import 'src/assets/style/variables';
+@import 'src/assets/style/mixin';
+
+.L-footer {
+  background-color: $grey-base;
+
+  .L-footer-content {
+    justify-content: space-between;
+    padding: 15px 0;
+
+    .L-footer-block {
+      width: 20%;
+      @include screen-max-width-991 {
+        width: 33.33%;
+        margin: 13px 0;
+      }
+      @include screen-max-width-767 {
+        width: 45%;
+      }
+      @include screen-max-width-576 {
+        width: 100%;
+      }
+
+      h6 {
+        color: $white;
+        font-size: $font-size-20;
+        margin: 5px 0;
+      }
+
+      p {
+        color: $white;
+        margin: 12px 0;
+
+        span {
+          cursor: pointer;
+          margin-right: 10px;
+          color: $yellow;
+        }
+      }
+
+      ul {
+        margin-top: 10px;
+
+        li {
+          color: $white;
+          margin: 8px 5px;
+          &:hover{
+            span , .L-nav-link{
+              color: $yellow;
+              transition: 0.2s;
+            }
+
+          }
+
+          span {
+            margin-right: 10px;
+          }
+
+          .L-nav-link {
+            color: $white;
+          }
+
+          .L-nav-active-link {
+            color: $yellow;
+          }
+        }
+      }
+
+      .L-footer-block-search {
+        margin: 15px 0;
+
+        input {
+          width: 70%;
+          height: 40px;
+          padding-left: 10px;
+        }
+
+        button {
+          width: 30%;
+          height: 40px;
+          color: $grey-base;
+        }
+      }
+
+      .L-footer-block-icons {
+        margin: 15px 0;
+
+        span {
+          color: $grey-base;
+          padding: 10px;
+          cursor: pointer;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}

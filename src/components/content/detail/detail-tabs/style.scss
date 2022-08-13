@@ -1,0 +1,48 @@
+@import "src/assets/style/variables";
+@import "src/assets/style/mixin";
+.L-info-detail-tabs-wrapper{
+  margin-top: 40px;
+  padding: 25px;
+  background-color: $white;
+  .L-info-detail-tabs-title{
+    width: 100%;
+    padding-top: 10px ;
+    background-color: $white;
+    border-bottom: 1px solid $grey-05;
+
+    .L-info-tab-title-child,
+    .L-info-tab-title-child-active{
+      height: 40px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      color: $grey-base;
+      cursor: pointer;
+      @include screen-max-width-767{
+        padding: 0 10px;
+      }
+    }
+    .L-info-tab-title-child{
+      &:hover{
+        border-top: 1px solid $grey-05;
+        border-left: 1px solid $grey-05;
+        border-right: 1px solid $grey-05;
+      }
+    }
+    .L-info-tab-title-child-active{
+      background-color: $grey-03;
+      border-top: 1px solid $grey-05;
+      border-left: 1px solid $grey-05;
+      border-right: 1px solid $grey-05;
+    }
+  }
+  .L-info-detail-tabs-content{
+    margin: 15px 0;
+    .L-info-detail-tab-content-child{
+      display: none;
+    }
+    .L-info-detail-tab-content-child-active{
+      display: block;
+    }
+  }
+}
