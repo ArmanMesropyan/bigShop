@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-    baseURL: 'https://crudcrud.com/api/' + '382293d6866e45cf916cd6e258f68c3b',
+    baseURL: 'https://crudcrud.com/api/' + 'cb2bf03c9e9349c0a27f82e5c2d10773',
 })
 export const ProductApi = {
     getAllProducts() {
