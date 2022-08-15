@@ -5,6 +5,15 @@
   margin: 50px 0;
   justify-content: space-between;
   align-items: center;
+  .L-categories-link{
+    .L-create-categories-link{
+      margin: 10px 0;
+      button{
+        width: 165px;
+        height: 40px;
+      }
+    }
+  }
 
   h6 {
     color: $grey-base;

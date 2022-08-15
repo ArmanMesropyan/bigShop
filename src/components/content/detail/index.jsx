@@ -24,6 +24,7 @@ const Detail = () => {
 
 
     useEffect(() => {
+        debugger
         dispatch(getProductTC(params.id))
     }, [])
 
@@ -66,11 +67,11 @@ const Detail = () => {
                 <div className="L-shop-detail-product G-flex G-justify-between" key={productById.id}>
                     <div className="L-shop-detail-child">
                         <Slider {...settings}>
-                            <div><img className='L-shop-detail-product-image' src={productById.images[0]} alt="img"/>
+                            <div><img className='L-shop-detail-product-image' src={productById.image} alt="img"/>
                             </div>
-                            <div><img className='L-shop-detail-product-image' src={productById.images[1]} alt="img"/>
+                            <div><img className='L-shop-detail-product-image' src={productById.image} alt="img"/>
                             </div>
-                            <div><img className='L-shop-detail-product-image' src={productById.images[2]} alt="img"/>
+                            <div><img className='L-shop-detail-product-image' src={productById.image} alt="img"/>
                             </div>
                         </Slider>
                     </div>

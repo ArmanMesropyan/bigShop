@@ -25,6 +25,7 @@ const ShopPage = () => {
     useEffect(() => {
         dispatch(getAllProductsTC())
     }, [])
+    console.log(products)
     return (
         <div className='L-shop-page G-container'>
             <CartIcon/>
@@ -156,27 +157,17 @@ const ShopPage = () => {
                                 <span className='icon-th-menu' onClick={()=> setStyleShop('L-shop-products-horizontal')}/>
                             </div>
                         </div>
-                        <div className="L-shop-utils-child G-flex">
-                            <div className="L-shop-utils-pre-child">
-                                <select>
-                                    <option value="" selected disabled hidden>Sorting</option>
-                                    <option>Latest</option>
-                                    <option>Popularity</option>
-                                    <option>Best Rating</option>
-                                </select>
-                            </div>
-                            <div className="L-shop-utils-pre-child">
-                                <select>
-                                    <option value="" selected disabled hidden>Showing</option>
-                                    <option>5</option>
-                                    <option>10</option>
-                                    <option>15</option>
-                                </select>
-                            </div>
+                        <div className='L-add-product'>
+                            <NavLink to='/shopAdd'>
+                                <button className='G-button-color'>
+                                    +
+                                </button>
+                            </NavLink>
                         </div>
+
                     </div>
                     <div className={styleShop + ' ' + 'G-flex G-flex-wrap' }>
-                        {currentProduct.map(item => <Products item={item} key={item.id}/>)}
+                        {currentProduct.map(item => <Products item={item} key={item._id}/>)}
                     </div>
                     <Pagination
                         currentPage={currentPage}

@@ -48,10 +48,10 @@ const Cart = () => {
                         {itemsInCart.length === 0 && <div className='L-empty-cart'> Cart Empty</div>}
                         {itemsInCart.map(item => {
                             return (
-                                <ul className='L-cart-items-block G-flex' key={item.id}>
+                                <ul className='L-cart-items-block G-flex' key={item._id}>
                                     <li className='G-flex'>
                                         <div className='L-item-image'
-                                             style={{backgroundImage: `url('${item.images[0]}')`}}/>
+                                             style={{backgroundImage: `url('${item.image}')`}}/>
                                         <p>{item.title}</p>
                                     </li>
                                     <li>${item.price}</li>
@@ -66,7 +66,7 @@ const Cart = () => {
                                     </li>
                                     <li>${item.price * item.count}</li>
                                     <li><span className='icon-cancel-circle L-close-icon'
-                                              onClick={() => dispatch(deleteItemFromCart(item.id))}/></li>
+                                              onClick={() => dispatch(deleteItemFromCart(item._id))}/></li>
                                 </ul>
                             )
                         })}

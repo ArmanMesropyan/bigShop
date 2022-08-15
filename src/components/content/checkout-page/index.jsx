@@ -91,12 +91,12 @@ const CheckoutPage = () => {
                                     {itemsInCart.map(item => {
                                         return (
                                             <div className='L-checkout-order-product G-flex G-justify-between'
-                                                 key={item.id}>
+                                                 key={item._id}>
                                                 <p>{item.title}</p>
                                                 <p>${item.price} | {item.count} <sub>x</sub>
                                                     <span
                                                         className='L-delete-order-product'
-                                                        onClick={() => dispatch(deleteItemFromCart(item.id))}
+                                                        onClick={() => dispatch(deleteItemFromCart(item._id))}
                                                     >&times;</span>
                                                 </p>
                                             </div>

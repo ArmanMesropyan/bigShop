@@ -5,6 +5,15 @@
   margin-top: 50px;
   justify-content: space-between;
   align-items: center;
+  .L-featured-title-link{
+    .L-create-product-link{
+      margin: 10px 0;
+      button{
+        width: 165px;
+        height: 40px;
+      }
+    }
+  }
 
   h6 {
     color: $grey-base;
@@ -33,6 +42,17 @@
     width: 25%;
     height: 370px;
     margin: 20px 10px;
+    position: relative;
+    .L-delete-product{
+      display: block;
+      position: absolute;
+      top: 0%;
+      z-index: 55;
+      background-color: transparent;
+      color: $red-dark;
+      font-size: 25px;
+      right: 0%;
+    }
     @include screen-max-width-991 {
     width: 33.33%;
     }

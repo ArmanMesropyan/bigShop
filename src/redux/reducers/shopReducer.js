@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import {productsApi} from '../../connection/api/request'
+import {CategoriesApi, ProductApi} from "../../connection/api/productApi";
 
 const initialState = {
     products: [],
@@ -12,21 +12,42 @@ const initialState = {
 export const getAllProductsTC = createAsyncThunk(
     'shop/getAllProductsTC',
     async () => {
-        const res = await productsApi.getAllProducts().then(data => data)
+        const res = await ProductApi.getAllProducts().then(data => data)
+        return res.data
+    }
+)
+export const CreateProductTC = createAsyncThunk(
+    'shop/CreateProductTC',
+    async (data) => {
+        const res = await ProductApi.createProduct(data).then(data => data)
         return res.data
     }
 )
 export const getProductTC = createAsyncThunk(
     'shop/getProductTC',
     async (id) => {
-        const res = await productsApi.getProduct(id).then(data => data)
+        const res = await ProductApi.getProduct(id).then(data => data)
         return res.data
+    }
+)
+export const deleteProductTC = createAsyncThunk(
+    'shop/deleteProductTC',
+    async (id) => {
+        const res = await ProductApi.deleteProduct(id).then(data => data)
+        return res
     }
 )
 export const getAllCategoriesTC = createAsyncThunk(
     'shop/getAllCategoriesTC',
     async () => {
-        const res = await productsApi.getCategories().then(data => data)
+        const res = await CategoriesApi.getAllCategories().then(data => data)
+        return res.data
+    }
+)
+export const CreateCategoryTC = createAsyncThunk(
+    'shop/CreateCategoryTC',
+    async (data) => {
+        const res = await CategoriesApi.createCategory(data).then(data => data)
         return res.data
     }
 )
@@ -35,7 +56,7 @@ export const ShopSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            const index = state.cartProducts.findIndex(prod => prod.id === action.payload.id)
+            const index = state.cartProducts.findIndex(prod => prod.id === action.payload._id)
 
             if (index === -1) {
                 state.cartProducts.push(action.payload);
@@ -48,15 +69,15 @@ export const ShopSlice = createSlice({
 
         },
         deleteItemFromCart: (state, action) => {
-            state.cartProducts = state.cartProducts.filter(item => item.id !== action.payload)
+            state.cartProducts = state.cartProducts.filter(item => item._id !== action.payload)
         },
         incrementProductById: (state, action) => {
-            if (state.productById.id === action.payload.id) {
+            if (state.productById._id === action.payload._id) {
                 state.productById.count++
             }
         },
         decrementProductById: (state, action) => {
-            if (state.productById.id === action.payload.id) {
+            if (state.productById._id === action.payload._id) {
                 if ( state.productById.count === 1) {
                     return state
                 } else {
@@ -67,7 +88,7 @@ export const ShopSlice = createSlice({
         },
         incrementProduct: (state, action) => {
             state.cartProducts = state.cartProducts.map(item => {
-                if (item.id === action.payload.id) {
+                if (item._id === action.payload._id) {
                     item.count++
                 }
                 return item
@@ -75,7 +96,7 @@ export const ShopSlice = createSlice({
         },
         decrementProduct: (state, action, dispatch) => {
             state.cartProducts = state.cartProducts.map(item => {
-                if (item.id === action.payload.id) {
+                if (item._id === action.payload._id) {
                     if (item.count === 1) {
                         return item
                     } else {
@@ -94,34 +115,17 @@ export const ShopSlice = createSlice({
 
     },
     extraReducers: {
-        [getAllProductsTC.pending]: (state, action) => {
-            console.log('loading')
-        },
+
         [getAllProductsTC.fulfilled]: (state, action) => {
             state.products = action.payload
         },
-        [getAllProductsTC.rejected]: (state) => {
-            console.log("что то пошло не так")
-        },
-        [getAllCategoriesTC.pending]: (state, action) => {
-            console.log('loading')
-        },
         [getAllCategoriesTC.fulfilled]: (state, action) => {
             state.categories = action.payload
-        },
-        [getAllCategoriesTC.rejected]: (state) => {
-            console.log("что то пошло не так")
-        },
-        [getProductTC.pending]: (state, action) => {
-            console.log('loading')
         },
         [getProductTC.fulfilled]: (state, action) => {
             state.productById = action.payload
             state.productById.count = 1
             state.productById.reviews = []
-        },
-        [getProductTC.rejected]: (state) => {
-            console.log("что то пошло не так")
         },
     }
 })
