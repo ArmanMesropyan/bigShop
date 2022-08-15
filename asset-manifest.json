@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bigShop/static/css/main.9d6dd141.css",
-    "main.js": "/bigShop/static/js/main.6689a817.js",
+    "main.css": "/bigShop/static/css/main.69828872.css",
+    "main.js": "/bigShop/static/js/main.f944598a.js",
     "static/media/carousel-1.jpg": "/bigShop/static/media/carousel-1.60602d436fd1c214c746.jpg",
     "static/media/carousel-3.jpg": "/bigShop/static/media/carousel-3.bccfb696d299dbe84841.jpg",
     "static/media/offer-1.jpg": "/bigShop/static/media/offer-1.6bd98b846d36554bf44b.jpg",
@@ -16,11 +16,11 @@
     "static/media/slick.ttf": "/bigShop/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/bigShop/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/bigShop/index.html",
-    "main.9d6dd141.css.map": "/bigShop/static/css/main.9d6dd141.css.map",
-    "main.6689a817.js.map": "/bigShop/static/js/main.6689a817.js.map"
+    "main.69828872.css.map": "/bigShop/static/css/main.69828872.css.map",
+    "main.f944598a.js.map": "/bigShop/static/js/main.f944598a.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d6dd141.css",
-    "static/js/main.6689a817.js"
+    "static/css/main.69828872.css",
+    "static/js/main.f944598a.js"
   ]
 }
