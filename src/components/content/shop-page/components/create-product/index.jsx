@@ -1,15 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useRef, useState} from 'react'
 import './style.scss'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {CreateProductTC} from "../../../../../redux/reducers/shopReducer";
 import {useHistory} from "react-router-dom";
-import Select from 'react-select'
+
 
 const CreateProduct = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const fileInput = useRef(null)
-    const categories = useSelector((state) => state.ShopReducer.categories)
     const [formData, setFormData] = useState({
         title:'',
         price:'',
@@ -48,16 +47,12 @@ const CreateProduct = () => {
             <div className="L-create-product G-flex">
                 <h6>Create Product</h6>
                 <div className='L-product-add-child'>
-                    <label>Select Category</label>
-                    <Select options={categories}  />
-                </div>
-                <div className='L-product-add-child'>
                     <label> Name</label>
                     <input type="text" placeholder='Title' onChange={handleName} value={formData.title}/>
                 </div>
                 <div className='L-product-add-child'>
                     <label>Price</label>
-                    <input type="text" placeholder='Price' onChange={handlePrice} value={formData.price}/>
+                    <input type="number"  placeholder='Price' onChange={handlePrice} value={formData.price}/>
                 </div>
                 <div className='L-product-add-child'>
                     <label>Description</label>
