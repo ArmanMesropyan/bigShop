@@ -3,13 +3,14 @@ import {useDispatch, useSelector} from "react-redux";
 import './style.scss'
 import {getAllCategoriesTC} from "../../../../redux/reducers/shopReducer";
 import {NavLink} from "react-router-dom";
+import Empty from "../../../pre-components/empty";
 
 const Categories = () => {
     const dispatch = useDispatch()
     const categories = useSelector((state) => state.ShopReducer.categories)
     useEffect(() => {
         dispatch(getAllCategoriesTC())
-    } , [])
+    }, [])
     return (
         <>
             <div className='L-category-title G-flex'>
@@ -24,7 +25,9 @@ const Categories = () => {
 
                 <div className='L-category-line'/>
             </div>
-            <div className="L-category-wrapper G-flex G-flex-wrap">
+            {categories.length === 0
+                ? <Empty text={'Categories'}/>
+                : <div className="L-category-wrapper G-flex G-flex-wrap">
                 {categories.map(item => {
                     return (
                         <div className='L-category-item G-flex ' key={item._id}>
@@ -39,7 +42,7 @@ const Categories = () => {
                         </div>
                     )
                 })}
-            </div>
+            </div>}
         </>
     )
 }

@@ -4,6 +4,7 @@ import './style.scss'
 import Products from "./products";
 import {getAllProductsTC} from "../../../../redux/reducers/shopReducer";
 import {NavLink} from "react-router-dom";
+import Empty from "../../../pre-components/empty";
 
 const FeaturedProduct = (props) => {
 
@@ -26,9 +27,11 @@ const FeaturedProduct = (props) => {
 
                 <div className='L-featured-line'/>
             </div>
-            <div className='L-featured-product G-flex G-flex-wrap'>
-                {products.slice(0,3).map(item => <Products item={item} key={item._id}/>)}
-            </div>
+            {products.length === 0
+                ? <Empty text={'Products'}/> :
+                <div className='L-featured-product G-flex G-flex-wrap'>
+                    {products.slice(0, 3).map(item => <Products item={item} key={item._id}/>)}
+                </div>}
         </>
     )
 }

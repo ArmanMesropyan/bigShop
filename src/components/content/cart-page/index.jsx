@@ -4,6 +4,7 @@ import './style.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {decrementProduct, deleteItemFromCart, incrementProduct} from '../../../redux/reducers/shopReducer'
 import ShopReducer from "../../../redux/reducers/shopReducer";
+import Empty from "../../pre-components/empty";
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -45,7 +46,7 @@ const Cart = () => {
                         </ul>
                     </div>
                     <div className='L-cart-items'>
-                        {itemsInCart.length === 0 && <div className='L-empty-cart'> Cart Empty</div>}
+                        {itemsInCart.length === 0 && <Empty cart = {'Cart'} product={'product'}/>}
                         {itemsInCart.map(item => {
                             return (
                                 <ul className='L-cart-items-block G-flex' key={item._id}>

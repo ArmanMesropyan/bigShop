@@ -1,0 +1,12 @@
+@import "src/assets/style/variables";
+.L-empty{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: $white;
+  width: 100%;
+  p{
+    font-size: 22px;
+    color: $grey-base;
+  }
+}

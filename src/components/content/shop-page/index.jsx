@@ -6,13 +6,14 @@ import Products from "../home-page/featured-prodcuts/products";
 import CartIcon from "../home-page/home-content/fixed-cart-icon";
 import Pagination from "./utils/pagination";
 import {getAllProductsTC, setCurrentPage} from "../../../redux/reducers/shopReducer";
+import Empty from "../../pre-components/empty";
 
 
 const ShopPage = () => {
     const dispatch = useDispatch()
-    const [selectedValue , setSelectedValue] = useState(null)
+    const [selectedValue, setSelectedValue] = useState(null)
     const isActive = (isActive) => (!isActive ? "L-nav-link" : "L-nav-active-link")
-    const [styleShop , setStyleShop] = useState('L-shop-products')
+    const [styleShop, setStyleShop] = useState('L-shop-products')
     const products = useSelector((state) => state.ShopReducer.products)
     const currentPage = useSelector((state) => state.ShopReducer.currentPage)
     const per_page = useSelector((state) => state.ShopReducer.postsPerPage)
@@ -151,10 +152,11 @@ const ShopPage = () => {
                     <div className='L-shop-utils G-flex G-justify-between'>
                         <div className="L-shop-utils-child G-flex">
                             <div className='L-shop-utils-pre-child'>
-                                <span className='icon-th-large' onClick={()=> setStyleShop('L-shop-products')}/>
+                                <span className='icon-th-large' onClick={() => setStyleShop('L-shop-products')}/>
                             </div>
                             <div className='L-shop-utils-pre-child'>
-                                <span className='icon-th-menu' onClick={()=> setStyleShop('L-shop-products-horizontal')}/>
+                                <span className='icon-th-menu'
+                                      onClick={() => setStyleShop('L-shop-products-horizontal')}/>
                             </div>
                         </div>
                         <div className='L-add-product'>
@@ -166,9 +168,11 @@ const ShopPage = () => {
                         </div>
 
                     </div>
-                    <div className={styleShop + ' ' + 'G-flex G-flex-wrap' }>
+                    {currentProduct.length === 0
+                        ? <Empty text={'Shop'}/>
+                        : <div className={styleShop + ' ' + 'G-flex G-flex-wrap'}>
                         {currentProduct.map(item => <Products item={item} key={item._id}/>)}
-                    </div>
+                    </div>}
                     <Pagination
                         currentPage={currentPage}
                         productPerPage={per_page}
